@@ -5,70 +5,53 @@
 */
 
 :root.theme-light {
-  --accent-color: #ff8dcb;
+  --accent-color: #353430;
   --primary-color: #353430;
   --secondary-color: #353430;
   --tertiary-color: #ffc2e6;
   --main-bg-color: #fff1f7;
+  --hover-color: rgba(53, 52, 48, 0.4);
   --bg-image: url(../images/cover-image-light.png);
 }
 
 @media (prefers-color-scheme: light) {
   :root {
-    --accent-color: #ff8dcb;
+    --accent-color: #353430;
     --primary-color: #353430;
     --secondary-color: #353430;
     --tertiary-color: #ffc2e6;
     --main-bg-color: #fff1f7;
+    --hover-color: rgba(53, 52, 48, 0.4);
     --bg-image: url(../images/cover-image-light.png);
   }
+  .page-title {
+    --accent-color: #ff8dcb;
+  }
+
+  .block-title {
+    --accent-color: #ff8dcb;
+  }
+  .link {
+    --accent-color: #ff8dcb;
+  }
+
   .header__decor {
     display: none;
   }
-
-  .decorated-zone::before {
-    border-inline-end: 1px solid var(--primary-color);
-    border-block-start: 1px solid var(--primary-color);
-  }
-
-  .decorated-zone::after {
-    border-inline-start: 1px solid var(--primary-color);
-    border-block-end: 1px solid var(--primary-color);
-  }
-  .header__theme-menu-button {
-    color: var(--primary-color);
-  }
-
-  .header__theme-menu-button.header__theme-menu-button_active {
-    border-color: var(--primary-color);
-  }
 }
 
-.theme-light .section-title {
-  color: var(--primary-color);
+.theme-light .page-title {
+  --accent-color: #ff8dcb;
+}
+
+.theme-light .block-title {
+  --accent-color: #ff8dcb;
+}
+
+.theme-light .link {
+  --accent-color: #ff8dcb;
 }
 
 .theme-light .header__decor {
   display: none;
-}
-
-.theme-light .decorated-zone::before {
-  border-inline-end: 1px solid var(--primary-color);
-  border-block-start: 1px solid var(--primary-color);
-}
-
-.theme-light .decorated-zone::after {
-  border-inline-start: 1px solid var(--primary-color);
-  border-block-end: 1px solid var(--primary-color);
-}
-.theme-light .header__theme-menu-button {
-  color: var(--primary-color);
-}
-
-.theme-light .header__theme-menu-button.header__theme-menu-button_active {
-  border-color: var(--primary-color);
-}
-
-.theme-light .section-title {
-  color: var(--primary-color);
 }

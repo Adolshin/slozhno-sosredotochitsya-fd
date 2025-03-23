@@ -6,23 +6,24 @@
 
 .page-title {
   color: var(--tertiary-color);
+  font-weight: bold;
   font-size: var(--title-size);
   line-height: 82.5%;
   text-shadow: 4px 4px 0 var(--accent-color);
 }
 
 .section-title {
-  margin-block-end: var(--big-margin);
+  margin-block-end: var(--secondary-gap);
   color: var(--accent-color);
   font-weight: bold;
 }
 
 .block:not(:last-child) {
-  margin-block-end: var(--big-margin);
+  margin-block-end: var(--secondary-gap);
 }
 
 .block-title {
-  margin-block-end: var(--small-margin);
+  margin-block-end: var(--main-gap);
   color: var(--primary-color);
   font-weight: bold;
   background-color: var(--accent-color);
@@ -32,15 +33,29 @@
   color: var(--secondary-color);
 }
 
-.text-decor {
+.link {
+  text-decoration: none;
   text-shadow: 2px 2px 0 var(--accent-color);
+}
+
+.link:focus {
+  outline: none;
+}
+
+.link:hover {
+  border-block-end: 1px solid var(--secondary-color);
+}
+
+.link:focus-visible {
+  outline: 1px solid var(--secondary-color);
 }
 
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  padding: 0 var(--main-padding);
-  font-family: "IBM Plex mono";
+  padding: 0 var(--main-gap);
+  font-family: "IBM Plex mono", Arial, sans-serif;
+  font-weight: normal;
   font-size: 18px;
   line-height: 130%;
   background-color: var(--main-bg-color);
@@ -50,13 +65,12 @@
   background-attachment: fixed;
 }
 
-
 .header {
   display: grid;
   grid-template-rows: repeat(3, 1fr);
   align-items: center;
-  margin-block-end: 40px;
-  padding: var(--main-padding) 0;
+  margin-block-end: 38px;
+  padding: var(--main-gap) 0;
   min-block-size: 668px;
   block-size: 100vh; /* Fallback */
 }
@@ -74,27 +88,27 @@
 .decorated-zone::before {
   content: "";
   position: absolute;
-  top: var(--main-padding);
+  top: var(--main-gap);
   right: 0;
-  width: 25px;
-  height: 25px;
   border-inline-end: 1px solid var(--accent-color);
   border-block-start: 1px solid var(--accent-color);
+  inline-size: 25px;
+  block-size: 25px;
 }
 .decorated-zone::after {
   content: "";
   position: absolute;
-  bottom: var(--main-padding);
+  bottom: var(--main-gap);
   left: 0;
-  width: 25px;
-  height: 25px;
   border-inline-start: 1px solid var(--accent-color);
   border-block-end: 1px solid var(--accent-color);
+  inline-size: 25px;
+  block-size: 25px;
 }
 
 .header__decor {
   position: absolute;
-  top: var(--main-padding);
+  top: var(--main-gap);
   right: 9px;
   display: flex;
   align-items: center;
@@ -109,16 +123,17 @@
 
 .header__decor:after {
   content: "";
-  width: 9px;
-  height: 9px;
   margin-left: 10px;
   border-radius: 50%;
   box-shadow: 0 0 4px 2px var(--accent-color);
   background-color: var(--accent-color);
+  inline-size: 9px;
+  block-size: 9px;
 }
 
 .header__theme-menu {
   justify-self: end;
+  margin-block-start: 10px;  /* Для PP */
 }
 
 .header__theme-menu-list {
@@ -129,15 +144,26 @@
 
 .header__theme-menu-button {
   border: 1px solid transparent;
-  padding: 2px 13px 4px;
+  padding: 1px 13px 5px;
   color: var(--accent-color);
   line-height: 1;
   text-transform: lowercase;
   background-color: transparent;
+  cursor: pointer;
+}
+
+.header__theme-menu-button:hover {
+  border-color: var(--hover-color);
+}
+
+.header__theme-menu-button:focus-visible {
+  border-block-end-color: var(--accent-color);
+  outline: none;
 }
 
 .header__theme-menu-button.header__theme-menu-button_active {
   border-color: var(--accent-color);
+  cursor: auto;
 }
 
 .header__title {
@@ -146,11 +172,11 @@
 }
 
 .header__subtitle {
-  margin-block-end: 0;
+  margin-block-end: 14px; /* Для PP */
 }
 
 .how__block-title {
-  margin-block-end: var(--big-margin);
+  margin-block-end: var(--secondary-gap);
 }
 
 .how__block-subtitle {
@@ -161,21 +187,18 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin-block-end: 40px; /* Для PP */
 }
 
 .pictures__title {
   margin-block-end: 0;
 }
-/* .pictures__block {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-} */
+
 .pictures__image {
-  width: 100%;
-  height: 100%;
   object-fit: cover;
   object-position: center;
+  inline-size: 100%;
+  block-size: 100%;
 }
 
 .footer {
@@ -183,7 +206,7 @@
   display: grid;
   place-items: center;
   block-size: 100vh; /* Fallback */
-  min-block-size: 668px;  
+  min-block-size: 668px;
 }
 
 @supports (block-size: 100dvb) {
@@ -207,9 +230,17 @@
     grid-column: 2;
   }
 
-  .header {
-    margin-block-end: 60px;
+  .block-title {
+    --main-gap: 10px;
   }
+
+  .header {   
+    margin-block-end: 60px;    
+  }
+
+  .header__theme-menu {
+    margin-block-start: 113px; /* Для PP */
+  } 
 
   .header__title {
     flex-direction: row;
@@ -217,12 +248,13 @@
   }
 
   .header__title span:first-child {
-    margin-inline-end: 75px;
+    margin-inline-end: 72px; /* Для PP */
   }
 
   .header__subtitle {
     justify-self: end;
-    max-width: 364px;
+    margin-block-end: 115px; /* Для PP */
+    max-inline-size: 364px;
   }
 
   .how__title {
@@ -237,12 +269,8 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+    margin-block-end: 60px; /* Для PP */
   }
-  /* .pictures__block {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
- 
-  } */
 
   .pictures__title {
     grid-column: span 3;
@@ -271,16 +299,23 @@
 }
 
 @media (width >= 1024px) {
+  
   .header__theme-menu {
     justify-self: center;
     align-self: start;
+    margin-block-start: 0; /* Для PP */
   }
   .header__theme-menu-list {
     flex-direction: row;
   }
 
+  .header__title span:first-child {
+    margin-inline-end: 94px; /* Для PP */
+  }
+
   .header__subtitle {
-    max-width: 461px;
+    margin-block-end: 58px; /* Для PP */
+    max-inline-size: 491px;
   }
   .what {
     grid-template-columns: repeat(3, 1fr);
