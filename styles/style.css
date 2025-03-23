@@ -52,9 +52,7 @@
 
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
-.page {
-  margin: 0 auto;
-  padding: 0 var(--page-padding);
+.page {  
   font-family: "IBM Plex mono", Arial, sans-serif;
   font-weight: normal;
   font-size: 18px;
@@ -70,7 +68,7 @@
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
   align-items: center;
-  padding: var(--page-padding) 0;
+  padding: var(--page-padding);
   min-block-size: 668px;
   block-size: 100vh;
 }
@@ -91,7 +89,7 @@
   border-inline-end: 1px solid var(--accent-color);
   border-block-start: 1px solid var(--accent-color);
   inset-block-start: var(--page-padding);
-  inset-inline-end: 0;
+  inset-inline-end: var(--page-padding);
   inline-size: 25px;
   block-size: 25px;
 }
@@ -101,7 +99,7 @@
   border-inline-start: 1px solid var(--accent-color);
   border-block-end: 1px solid var(--accent-color);
   inset-block-end: var(--page-padding);
-  inset-inline-start: 0;
+  inset-inline-start: var(--page-padding);
   inline-size: 25px;
   block-size: 25px;
 }
@@ -111,7 +109,7 @@
   display: flex;
   align-items: center;
   inset-block-start: var(--page-padding);
-  inset-inline-end: 9px;
+  inset-inline-end: 19px;
 }
 .header__decor:before {
   content: "rec";
@@ -169,7 +167,7 @@
 }
 
 .main {
-  margin: var(--main-margin) 0;
+  padding: var(--main-padding) var(--page-padding);
 }
 
 .how__block-title {
@@ -202,7 +200,7 @@
   display: grid;
   place-items: center;
   block-size: 100vh; /* Fallback */
-  min-block-size: 668px;
+  min-block-size: 668px; 
 }
 
 @supports (block-size: 100dvb) {
@@ -224,6 +222,10 @@
 
   .block {
     grid-column: 2;
+  }
+
+  .header__decor {
+    inset-inline-end: 29px;
   }
 
   .header__title {

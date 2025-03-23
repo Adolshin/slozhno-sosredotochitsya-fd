@@ -11,7 +11,7 @@
   --main-bg-color: #000028;
   --hover-color: rgba(255, 0, 112, 0.4);
   --title-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-  --main-margin: 40px;
+  --main-padding: 40px;
   --section-gap: 50px;
   --page-padding: 10px;
   --bg-image: url(../images/cover-image-dark.png);
@@ -21,7 +21,7 @@
   :root {
     --title-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
     --section-gap: 80px;
-    --main-margin: 60px;
+    --main-padding: 60px;
     --page-padding: 20px;
   }
 }
