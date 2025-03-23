@@ -52,7 +52,7 @@
 
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
-.page {  
+.page {
   font-family: "IBM Plex mono", Arial, sans-serif;
   font-weight: normal;
   font-size: 18px;
@@ -93,6 +93,7 @@
   inline-size: 25px;
   block-size: 25px;
 }
+
 .decorated-zone::after {
   content: "";
   position: absolute;
@@ -111,6 +112,7 @@
   inset-block-start: var(--page-padding);
   inset-inline-end: 19px;
 }
+
 .header__decor:before {
   content: "rec";
   color: var(--accent-color);
@@ -200,7 +202,7 @@
   display: grid;
   place-items: center;
   block-size: 100vh; /* Fallback */
-  min-block-size: 668px; 
+  min-block-size: 668px;
 }
 
 @supports (block-size: 100dvb) {
@@ -254,18 +256,22 @@
   .pictures__title {
     grid-column: span 3;
   }
+
   .pictures__image_sunset {
     grid-column: span 2;
     grid-row: 2;
   }
+
   .pictures__image_ice-cream {
     grid-column: 3;
     grid-row: 2 / span 2;
   }
+
   .pictures__image_type {
     grid-column: 1;
     grid-row: 3 / span 2;
   }
+
   .pictures__image_books {
     grid-column: 2;
     grid-row: 3;
@@ -294,6 +300,7 @@
   .header__subtitle {
     max-inline-size: 491px;
   }
+  
   .why__block,
   .how__block,
   .how__block-title {

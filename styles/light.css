@@ -24,6 +24,7 @@
     --hover-color: rgba(53, 52, 48, 0.4);
     --bg-image: url(../images/cover-image-light.png);
   }
+
   .page-title {
     --accent-color: #ff8dcb;
   }
@@ -31,6 +32,7 @@
   .block-title {
     --accent-color: #ff8dcb;
   }
+  
   .link {
     --accent-color: #ff8dcb;
   }
