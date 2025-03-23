@@ -53,6 +53,7 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
+  margin: 0 auto;
   padding: 0 var(--page-padding);
   font-family: "IBM Plex mono", Arial, sans-serif;
   font-weight: normal;
