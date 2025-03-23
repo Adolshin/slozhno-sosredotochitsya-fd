@@ -71,7 +71,7 @@
   align-items: center;
   padding: var(--page-padding) 0;
   min-block-size: 668px;
-  block-size: 100vh; /* Fallback */
+  block-size: 100vh;
 }
 
 @supports (block-size: 100dvb) {
@@ -107,10 +107,10 @@
 
 .header__decor {
   position: absolute;
-  inset-block-start: var(--page-padding);
-  inset-inline-end: 9px;
   display: flex;
   align-items: center;
+  inset-block-start: var(--page-padding);
+  inset-inline-end: 9px;
 }
 .header__decor:before {
   content: "rec";
