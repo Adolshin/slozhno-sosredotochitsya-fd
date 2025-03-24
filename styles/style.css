@@ -33,6 +33,10 @@
   color: var(--secondary-color);
 }
 
+.text:not(:last-child) {
+  margin-block-end: 10px; /* Добавил отступы между параграфами, кроме последнего в блоке*/
+}
+
 .link {
   text-decoration: none;
   text-shadow: 2px 2px 0 var(--accent-color);
@@ -43,7 +47,7 @@
 }
 
 .link:hover {
-  border-block-end: 1px solid var(--secondary-color);
+  border-block-end: 1px solid currentColor;
 }
 
 .link:focus-visible {
@@ -53,7 +57,7 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  font-family: "IBM Plex mono", Arial, sans-serif;
+  font-family: "IBM Plex mono", monospace;
   font-weight: normal;
   font-size: 18px;
   line-height: 130%;
@@ -300,15 +304,21 @@
   .header__subtitle {
     max-inline-size: 491px;
   }
-  
+
   .why__block,
   .how__block,
   .how__block-title {
     grid-column: 2 / span 2;
   }
 
+  .what__title {
+    display: grid;
+    grid-template-columns: subgrid; /*Решил, что ограничить ширину заголовка одной грид колонкой корректнее через вложенный грид, а не через calc(ниже альтернативное решение) */
+    grid-column: 1 / -1;
+    /* width: calc((100% - 40px)/3); */
+  }
+
   .what__block {
     grid-column: auto;
-    grid-row: 2;
   }
 }
